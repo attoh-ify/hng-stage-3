@@ -2,17 +2,17 @@
   "name": "backend-mentor-agent",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
+  "description": "",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "mastra dev",
     "build": "mastra build",
-    "start": "mastra start"
+    "start": "node --import=./.mastra/output/instrumentation.mjs .mastra/output/index.mjs"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "type": "module",
   "engines": {
     "node": ">=20.9.0"
   },
@@ -22,7 +22,7 @@
     "@mastra/libsql": "^0.16.1",
     "@mastra/loggers": "^0.10.18",
     "@mastra/memory": "^0.15.10",
-    "zod": "^4.1.12"
+    "zod": "^3.25.8"
   },
   "devDependencies": {
     "@types/node": "^24.9.2",
