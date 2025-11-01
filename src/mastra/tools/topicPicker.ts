@@ -1,5 +1,4 @@
 import { Tool } from "@mastra/core/tools";
-// import { loadMemory, markTopicUsed, getLastUsedDate } from "../utils/memory.js"
 import { z } from "zod";
 
 const BACKEND_TOPICS = [
@@ -112,51 +111,20 @@ const BACKEND_TOPICS = [
     "Id Generation Strategies (UUID, Snowflake)"
 ];
 
-// const MIN_TOPIC_COOLDOWN_DAYS = 14;
-
-// function daysAgo(dateString: string) {
-//     const then = new Date(dateString).getTime();
-//     const now = Date.now();
-//     const diffDays = (now - then) / (1000 * 60 * 60 * 24);
-//     return diffDays;
-// }
 
 export const topicPickerTool = new Tool({
     id: "topicPickerTool",
     description: "Selects the next backend topic for the daily lesson.",
-    // inputSchema: z.object({
-    //     userId: z.string(),
-    // }),
     outputSchema: z.object({
         topic: z.string(),
-        // reason: z.string(),
     }),
     async execute({ context }) {
-        // const { userId = "default" } = context;
-        // const memory = await loadMemory(userId);
-
-        const availableTopics = [];
-
-        // for (const topic of BACKEND_TOPICS) {
-        //     const lastUsed = memory.topics[topic];
-        //     if (!lastUsed || daysAgo(lastUsed) >= MIN_TOPIC_COOLDOWN_DAYS) {
-        //         availableTopics.push(topic);
-        //     };
-        // };
-
-        // const pool = availableTopics.length ? availableTopics : BACKEND_TOPICS;
         const pool = BACKEND_TOPICS;
 
         const selected = pool[Math.floor(Math.random() * pool.length)];
 
-        // await markTopicUsed(userId, selected);
-
         return {
             topic: selected,
-            // reason:
-                // availableTopics.length < BACKEND_TOPICS.length
-                    // ? "Chosen to revisit a core backend concept after a cool-down period."
-                    // : "Chosen as a fresh topic to explore today."
         };
     }
 });

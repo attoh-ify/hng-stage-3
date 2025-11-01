@@ -63,8 +63,6 @@ Guidelines:
                 console.warn("⚠️ Gemini returned an empty response!");
             }
 
-            console.log(response);
-
             return {
                 topic,
                 question,

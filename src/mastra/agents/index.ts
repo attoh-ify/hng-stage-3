@@ -1,16 +1,11 @@
 import { Agent } from "@mastra/core/agent";
-import { Memory } from "@mastra/memory";
-// import { storage } from "../storage.js";
 
 import { topicPickerTool } from "../tools/topicPicker.js";
 import { lessonGeneratorTool } from "../tools/lessonGenerator.js";
 import { qaTool } from "../tools/qa.js";
 
 
-// const memory = new Memory({ storage });
-
 const assistant = new Agent({
-    // memory,
     name: "Backend Mentor",
     instructions: `
 You are "Backend Mentor", an AI teacher for backend developers.

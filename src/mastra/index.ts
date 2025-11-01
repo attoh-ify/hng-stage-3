@@ -1,6 +1,5 @@
 import { Mastra } from "@mastra/core";
 import { createLogger } from "@mastra/core/logger";
-// import { storage } from "./storage.js";
 
 import agents from "./agents/index.js";
 
@@ -10,7 +9,6 @@ const mastra = new Mastra({
         name: "BackendMentorAgent",
         level: "info",
     }),
-    // storage
 });
 
-export { mastra };  // storage
+export { mastra };

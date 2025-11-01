@@ -63,8 +63,6 @@ Constraints:
                 console.warn("⚠️ Gemini returned an empty response!");
             }
 
-            console.log(response);
-
             return {
                 title: `Today's Topic: ${topic}`,
                 content: text,
