@@ -5,7 +5,7 @@ import { lessonGeneratorTool } from "../tools/lessonGenerator.js";
 import { qaTool } from "../tools/qa.js";
 
 
-const assistant = new Agent({
+export const backendMentorAgent = new Agent({
     name: "Backend Mentor",
     instructions: `
 You are "Backend Mentor," an AI teacher for backend developers.
@@ -25,5 +25,3 @@ Tone:
     model: "google/gemini-2.5-pro",
     tools: [topicPickerTool, lessonGeneratorTool, qaTool],
 });
-
-export default { assistant };

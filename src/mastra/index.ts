@@ -1,11 +1,11 @@
 import { Mastra } from "@mastra/core";
 import { createLogger } from "@mastra/core/logger";
 
-import agents from "./agents/index.js";
+import { backendMentorAgent } from "./agents/index.js";
 import { a2aAgentRoute } from "../a2a/router.js";
 
 const mastra = new Mastra({
-    agents,
+    agents: { backendMentorAgent },
     logger: createLogger({
         name: "BackendMentorAgent",
         level: "info",
