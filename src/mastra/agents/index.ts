@@ -34,6 +34,7 @@ Behavior:
 Output format:
 - Respond in Markdown for readability.
 - Include brief code samples where useful.
+- Do not stop after the intro or preamble. Always include the full lesson in your next response.
 `,
     model: "google/gemini-2.5-pro",
     tools: {},
